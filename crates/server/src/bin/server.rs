@@ -1,4 +1,10 @@
-use axum::{extract::Query, response::Html, routing::get, Router};
+use axum::{
+    extract::Query,
+    response::{Html, IntoResponse},
+    routing::get,
+    Router,
+};
+use hyper::StatusCode;
 use rand::{thread_rng, Rng};
 use serde::Deserialize;
 use std::net::SocketAddr;
@@ -13,7 +19,12 @@ struct RangeParameters {
 
 #[tokio::main]
 async fn main() {
+    // build our application with a route
     let app = Router::new().route("/", get(handler));
+
+    // add a fallback service for handling routes to unknown paths
+    let app = app.fallback(handler_404);
+
     serve(app, 3333).await;
 }
 
@@ -23,6 +34,10 @@ async fn handler(Query(range): Query<RangeParameters>) -> Html<String> {
 
     // Send response in html format.
     Html(format!("<h1>Random Number: {}</h1>", random_number))
+}
+
+async fn handler_404() -> impl IntoResponse {
+    (StatusCode::NOT_FOUND, "nothing to see here")
 }
 
 async fn serve(app: Router, port: u16) {
