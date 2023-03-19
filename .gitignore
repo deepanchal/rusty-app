@@ -1,5 +1,10 @@
-# Created by https://www.toptal.com/developers/gitignore/api/rust,rust-analyzer,visualstudiocode,jetbrains+all
-# Edit at https://www.toptal.com/developers/gitignore?templates=rust,rust-analyzer,visualstudiocode,jetbrains+all
+# Created by https://www.toptal.com/developers/gitignore/api/rust,rust-analyzer,jetbrains+all,visualstudiocode,direnv
+# Edit at https://www.toptal.com/developers/gitignore?templates=rust,rust-analyzer,jetbrains+all,visualstudiocode,direnv
+
+### direnv ###
+.direnv
+.envrc*
+!.envrc
 
 ### JetBrains+all ###
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio, WebStorm and Rider
@@ -129,5 +134,4 @@ rust-project.json
 .history
 .ionide
 
-# End of https://www.toptal.com/developers/gitignore/api/rust,rust-analyzer,visualstudiocode,jetbrains+all
-
+# End of https://www.toptal.com/developers/gitignore/api/rust,rust-analyzer,jetbrains+all,visualstudiocode,direnv
