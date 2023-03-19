@@ -8,6 +8,7 @@ edition = "2021"
 [dependencies]
 axum = "0.6.11"
 diesel = { version = "2.0.3", features = ["postgres", "serde_json", "r2d2", "chrono"] }
+dotenvy = "0.15.6"
 hyper = "0.14.25"
 rand = "0.8.5"
 serde = { version = "1.0.157", features = ["derive"] }
