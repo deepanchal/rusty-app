@@ -1,5 +1,7 @@
 [workspace]
-members = [
-  "crates/*"
+default-members = [
+  "crates/server",
 ]
-
+members = [
+  "crates/*",
+]
