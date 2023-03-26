@@ -10,7 +10,7 @@ diesel::table! {
         updated_by -> Nullable<Int4>,
         first_name -> Varchar,
         last_name -> Varchar,
-        user_id -> Nullable<Int4>,
+        user_id -> Int4,
     }
 }
 
@@ -25,7 +25,7 @@ diesel::table! {
         title -> Varchar,
         description -> Nullable<Varchar>,
         done -> Bool,
-        user_id -> Nullable<Int4>,
+        user_id -> Int4,
     }
 }
 
