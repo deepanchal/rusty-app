@@ -14,3 +14,17 @@ test:
 # Format with rustfmt
 format:
   cargo fmt
+
+# Run migrations
+migrations-run:
+  diesel migration run
+
+# Redo migrations
+migrations-redo:
+  diesel migration redo
+
+# DB Shell
+dbshell:
+  psql $DATABASE_URL
+
+
