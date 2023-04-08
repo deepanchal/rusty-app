@@ -1,5 +1,5 @@
 use diesel::prelude::*;
-use server::models::*;
+use server::models::todo::Todo;
 use server::*;
 
 fn main() {
